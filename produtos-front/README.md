@@ -1,41 +1,67 @@
-Lista de Tarefas em Angular
+# produtos-front
 
-Aplicação simples de lista de tarefas desenvolvida em Angular como atividade individual prática para fixação de conceitos de componentes, templates, data binding, eventos e diretivas, do módulo 7 do bootcamp da Womakerscode.
+Este diretório contém o frontend em Angular do projeto de integração com a API .NET.
 
-Funcionalidades
+A aplicação consome os dados da API de produtos e oferece uma interface para listar, criar, atualizar e deletar registros.
 
-    Visualizar tarefas: Exibe a lista de tarefas pré-cadastradas e novas adicionadas.
-    Adicionar tarefa: Campo de digitação com validação (não permite adicionar tarefas em branco).
-    Concluir tarefa: Caixa de seleção (checkbox) que marca a tarefa como concluída e aplica um efeito de texto riscado.
-    Remover tarefa: Botão para excluir uma tarefa da lista.
-    Contador automático: Exibe dinamicamente a quantidade de tarefas concluídas na parte inferior da tela.
+## Objetivo
 
-Tecnologias
+Permitir que o usuário interaja com o sistema de produtos por meio de uma interface web, consumindo a API do backend.
 
-    Angular (Componentes Standalone)
-    TypeScript
-    HTML5 & CSS3
-    FormsModule (Two-way data binding com [(ngModel)])
+## Tecnologias
 
-Execução
-Pré-requisitos
+- Angular
+- TypeScript
+- HTML
+- CSS
+- HttpClient
 
-Ter o Node.js e o npm instalados no computador.
+## Estrutura principal
 
-Passo a passo
+```text
+produtos-front/
+├── src/
+├── public/
+├── angular.json
+├── package.json
+├── tsconfig.json
+├── tsconfig.app.json
+├── tsconfig.spec.json
+├── README.md
+└── .gitignore
+```
 
-    Abra o terminal na pasta do projeto:
+## Fluxo da aplicação
 
-    cd lista-tarefas-wmc
+- O frontend acessa a API em `http://localhost:5027`
+- Os serviços fazem requisições para `/api/Produtos`
+- A interface renderiza os produtos em tela e permite operações CRUD
 
-    Instale as dependências (caso seja a primeira vez ou em outro computador):
+## Como executar
 
-    npm install
+No diretório do frontend:
 
-    Inicie o servidor de desenvolvimento:
+```bash
+cd produtos-front
+npm install
+npm start
+```
 
-    npm start
+A aplicação ficará disponível em:
 
-    Abra o seu navegador e acesse:
+- `http://localhost:4200`
 
-    http://localhost:4200/
+## Dependência com o backend
+
+Antes de iniciar o frontend, a API precisa estar rodando no backend.
+
+Se a API não estiver ativa, o frontend não conseguirá acessar os dados.
+
+## Observações
+
+- Este projeto integra com a API do diretório [../MinhaPrimeiraApi/README.md](../MinhaPrimeiraApi/README.md)
+- O projeto completo está documentado no [README principal](../README.md)
+
+---
+
+Aplicação desenvolvida para demonstrar a integração entre frontend Angular e backend ASP.NET Core.
