@@ -1,0 +1,61 @@
+<div class="container">
+  <h1>Gerenciador de Produtos</h1>
+
+  <section class="card">
+    <h2>Buscar Produto</h2>
+    <div class="form-group row">
+      <input type="number" [(ngModel)]="buscaId" placeholder="ID do produto">
+      <button (click)="buscar()">Buscar</button>
+    </div>
+    
+    <div *ngIf="produtoBuscado" class="result">
+      <p><strong>Encontrado:</strong> {{ produtoBuscado.nome }} - R$ {{ produtoBuscado.preco }}</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Novo Produto</h2>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="novoProduto.nome" placeholder="Nome">
+      <input type="number" [(ngModel)]="novoProduto.preco" placeholder="Preço">
+      <button (click)="adicionar()">Adicionar</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Lista de Produtos</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Preço</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let produto of produtos">
+          <td>{{ produto.id }}</td>
+          
+          <ng-container *ngIf="produtoEditandoId !== produto.id; else edicao">
+            <td>{{ produto.nome }}</td>
+            <td>R$ {{ produto.preco }}</td>
+            <td>
+              <button class="btn-edit" (click)="iniciarEdicao(produto)">Editar</button>
+              <button class="btn-delete" (click)="remover(produto.id)">Remover</button>
+            </td>
+          </ng-container>
+
+          <ng-template #edicao>
+            <td><input type="text" [(ngModel)]="produtoEditando.nome"></td>
+            <td><input type="number" [(ngModel)]="produtoEditando.preco"></td>
+            <td>
+              <button class="btn-save" (click)="salvarEdicao(produto.id)">Salvar</button>
+              <button class="btn-cancel" (click)="cancelarEdicao()">Cancelar</button>
+            </td>
+          </ng-template>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</div>

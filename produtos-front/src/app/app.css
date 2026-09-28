@@ -1,0 +1,134 @@
+:host {
+  display: block;
+  font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: #333;
+  background: #f4f7f6;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+}
+
+h2 {
+  font-size: 1.25rem;
+  color: #34495e;
+  margin-bottom: 1rem;
+  margin-top: 0;
+  border-bottom: 2px solid #ecf0f1;
+  padding-bottom: 0.5rem;
+}
+
+.form-group {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+input {
+  padding: 0.6rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  flex: 1;
+}
+
+input:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  background-color: #3498db;
+  color: white;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+.btn-edit { background-color: #f39c12; }
+.btn-edit:hover { background-color: #d68910; }
+
+.btn-delete { background-color: #e74c3c; }
+.btn-delete:hover { background-color: #c0392b; }
+
+.btn-save { background-color: #2ecc71; }
+.btn-save:hover { background-color: #27ae60; }
+
+.btn-cancel { background-color: #95a5a6; }
+.btn-cancel:hover { background-color: #7f8c8d; }
+
+.result {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #e8f8f5;
+  border-radius: 6px;
+  border-left: 4px solid #1abc9c;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  font-weight: 600;
+  color: #7f8c8d;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+}
+
+tr:hover td {
+  background-color: #f9fbfd;
+}
+
+td button {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  margin-right: 0.5rem;
+}
